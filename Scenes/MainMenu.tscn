@@ -59,3 +59,4 @@ grow_vertical = 0
 text = "Exit"
 
 [connection signal="pressed" from="GameName/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="GameName/ExitButton" to="." method="_on_exit_button_pressed"]

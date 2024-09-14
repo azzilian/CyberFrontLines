@@ -11,6 +11,7 @@ var dispatch_button: Button
 var reset_button: Button
 var end_turn_button: Button
 
+
 func _ready():
 	# Find all zones
 	zones.append($RadioZone)
@@ -55,19 +56,20 @@ func _on_dispatch_button_pressed():
 		unit.position = selected_zone.position
 #	DisableZone for other units
 	#selected_zone.disabled = true - crash because of Node2D
-	selected_zone.set("is_active", false)
-	selected_zone = null
+		selected_zone.get_node("TextureButton").set_disabled(true)
+		selected_zone.set("is_active", false)
+		selected_zone = null
 	
 #	$DispatchButton disable
-	dispatch_button.disabled = true
+		dispatch_button.disabled = true
 	
 #	Next unit
-	current_unit += 1
+		current_unit += 1
 	
 #	Check no units left
-	if current_unit >= units.size():
-		reset_button.disabled = false
-		end_turn_button.disabled = false
+		if current_unit >= units.size():
+			reset_button.disabled = false
+			end_turn_button.disabled = false
 
 func _on_reset_button_pressed():
 #	Return Units

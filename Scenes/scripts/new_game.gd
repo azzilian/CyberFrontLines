@@ -23,3 +23,7 @@ func _on_new_game_button_pressed():
 		get_tree().change_scene_to_file(new_scene_path)
 	else:
 		print("Failed to load scene:", new_scene_path)
+
+
+func _on_exit_button_pressed():
+	get_tree().quit() # Replace with function body.
