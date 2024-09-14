@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cshnr0g26ylqb"]
+[gd_scene load_steps=11 format=3 uid="uid://cshnr0g26ylqb"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/fields/battle_zone.gd" id="1_rnrsa"]
 [ext_resource type="PackedScene" uid="uid://bnwd83uirejyw" path="res://Scenes/HUD/fields/Base.tscn" id="1_wjsv6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0syytkwwooa0" path="res://Scenes/units/assault/Assault.tscn" id="6_hotdp"]
 [ext_resource type="PackedScene" uid="uid://dpc8o7vesh36r" path="res://Scenes/units/defender/Defender.tscn" id="7_xw0t4"]
 [ext_resource type="PackedScene" uid="uid://dsnfuofs35aem" path="res://Scenes/units/recon/Recon.tscn" id="8_jgtoa"]
+[ext_resource type="PackedScene" uid="uid://bbeumktrl6ode" path="res://Scenes/MainMenu.tscn" id="10_f6cir"]
 
 [node name="BattleZone" type="Node2D"]
 position = Vector2(21, 61)
@@ -101,6 +102,10 @@ offset_top = 561.0
 offset_right = 1197.0
 offset_bottom = 592.0
 text = "End_Turn"
+
+[node name="GameName" parent="." instance=ExtResource("10_f6cir")]
+visible = false
+script = null
 
 [connection signal="zone_selected" from="RadioZone" to="." method="_on_radio_zone_zone_selected"]
 [connection signal="zone_selected" from="MicroControlerZone" to="." method="_on_micro_controler_zone_zone_selected"]
