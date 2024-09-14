@@ -18,3 +18,4 @@ func _on_zone_toggled(toggled_on: bool):
 func _on_texture_button_pressed():
 	print("Zone selected: ", self.name)  
 	emit_signal("zone_selected", self)   # Replace with function body.
+	self.set("is_active", true)
