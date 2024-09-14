@@ -5,6 +5,7 @@ var zones = []
 var units = []
 var selected_zone = null
 var current_unit = 0
+var unit_old_positions = []
 
 #Buttons
 var dispatch_button: Button
@@ -22,6 +23,10 @@ func _ready():
 	units.append($Recon)
 	units.append($Defender)
 	units.append($Assault)
+	
+	unit_old_positions.resize(units.size())
+	for i in range(units.size()):
+		unit_old_positions[i] = Vector2()
 	
 #	Find all buttons
 	dispatch_button = $DispatchButton
@@ -53,6 +58,7 @@ func _on_dispatch_button_pressed():
 #	Send unit
 	if selected_zone != null and current_unit < units.size():
 		var unit = units[current_unit]
+		unit_old_positions[current_unit] = unit.position
 		unit.position = selected_zone.position
 #	DisableZone for other units
 	#selected_zone.disabled = true - crash because of Node2D
@@ -73,11 +79,12 @@ func _on_dispatch_button_pressed():
 
 func _on_reset_button_pressed():
 #	Return Units
-	for unit in units:
-		unit.position = Vector2(0,0)
+	for i in range(units.size()):
+		units[i].position = unit_old_positions[i]
 #	Activate zones
 	for zone in zones:
 		zone.set("is_active", true)
+		zone.get_node("TextureButton").set_disabled(false)
 #	Reset conditions
 	selected_zone = null
 	current_unit = 0
