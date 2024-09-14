@@ -89,8 +89,8 @@ func _on_reset_button_pressed():
 	selected_zone = null
 	current_unit = 0
 	dispatch_button.disabled = true
-	dispatch_button.disabled = true
-	dispatch_button.disabled = true
+	reset_button.disabled = true
+	end_turn_button.disabled = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
