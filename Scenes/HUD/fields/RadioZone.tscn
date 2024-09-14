@@ -22,4 +22,5 @@ grow_vertical = 2
 texture_normal = ExtResource("1_xvq4y")
 texture_focused = ExtResource("3_8ktdc")
 
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]

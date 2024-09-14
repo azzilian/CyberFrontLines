@@ -54,7 +54,10 @@ func _on_dispatch_button_pressed():
 		var unit = units[current_unit]
 		unit.position = selected_zone.position
 #	DisableZone for other units
-	selected_zone.disabled = true
+	#selected_zone.disabled = true - crash because of Node2D
+	for child in selected_zone.get_children():
+		if child is CollisionShape2D:
+			child.disabled = true
 	selected_zone = null
 	
 #	$DispatchButton disable

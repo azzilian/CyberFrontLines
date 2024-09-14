@@ -10,3 +10,5 @@ script = ExtResource("1_d4fuy")
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_augun")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
