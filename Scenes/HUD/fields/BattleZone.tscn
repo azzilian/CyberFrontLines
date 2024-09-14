@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cshnr0g26ylqb"]
+[gd_scene load_steps=11 format=3 uid="uid://cshnr0g26ylqb"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/fields/battle_zone.gd" id="1_rnrsa"]
 [ext_resource type="PackedScene" uid="uid://bnwd83uirejyw" path="res://Scenes/HUD/fields/Base.tscn" id="1_wjsv6"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://0syytkwwooa0" path="res://Scenes/units/assault/Assault.tscn" id="6_hotdp"]
 [ext_resource type="PackedScene" uid="uid://dpc8o7vesh36r" path="res://Scenes/units/defender/Defender.tscn" id="7_xw0t4"]
 [ext_resource type="PackedScene" uid="uid://dsnfuofs35aem" path="res://Scenes/units/recon/Recon.tscn" id="8_jgtoa"]
+[ext_resource type="PackedScene" uid="uid://bbeumktrl6ode" path="res://Scenes/MainMenu.tscn" id="10_f6cir"]
 
 [node name="BattleZone" type="Node2D"]
 position = Vector2(21, 61)
 script = ExtResource("1_rnrsa")
 
 [node name="BasePlayer" parent="." instance=ExtResource("1_wjsv6")]
-position = Vector2(1080, 316)
+position = Vector2(1142, 319)
 
 [node name="BaseEnemy" parent="." instance=ExtResource("1_wjsv6")]
 position = Vector2(95, 12)
@@ -30,10 +31,10 @@ position = Vector2(1074, 32)
 position = Vector2(585, 136)
 
 [node name="Shop" parent="." instance=ExtResource("5_eivab")]
-position = Vector2(1062, 469)
+position = Vector2(78, 487)
 
 [node name="Assault" parent="." instance=ExtResource("6_hotdp")]
-position = Vector2(370, 450)
+position = Vector2(648, 461)
 
 [node name="AssaultEnergy" type="SpinBox" parent="Assault"]
 offset_left = -32.0
@@ -42,7 +43,7 @@ offset_right = 51.0625
 offset_bottom = 87.0
 
 [node name="Defender" parent="." instance=ExtResource("7_xw0t4")]
-position = Vector2(579, 443)
+position = Vector2(821, 460)
 
 [node name="DefenderEnergy" type="SpinBox" parent="Defender"]
 offset_left = -36.0
@@ -51,27 +52,28 @@ offset_right = 47.0625
 offset_bottom = 91.0
 
 [node name="Recon" parent="." instance=ExtResource("8_jgtoa")]
-position = Vector2(667, 384)
+position = Vector2(981, 463)
 
 [node name="ReconEnergy" type="SpinBox" parent="Recon"]
-offset_left = 64.0
-offset_top = 118.0
-offset_right = 147.063
-offset_bottom = 149.0
+offset_left = -43.0
+offset_top = 58.0
+offset_right = 40.063
+offset_bottom = 89.0
 
 [node name="DispatchButton" type="Button" parent="."]
-offset_left = 308.0
-offset_top = 550.0
-offset_right = 867.0
-offset_bottom = 646.0
-theme_override_font_sizes/font_size = 64
+offset_left = 621.0
+offset_top = 585.0
+offset_right = 1020.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 32
+disabled = true
 text = "Send Unit to Zone"
 
 [node name="EnergyText" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 371.0
-offset_right = 64.0
-offset_bottom = 550.0
+offset_left = 394.0
+offset_top = 376.0
+offset_right = 434.0
+offset_bottom = 555.0
 theme_override_font_sizes/font_size = 32
 text = "Avalible Energy :"
 vertical_alignment = 1
@@ -86,5 +88,26 @@ offset_bottom = 139.0
 theme_override_font_sizes/font_size = 32
 text = "10"
 
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 1117.0
+offset_top = 474.0
+offset_right = 1194.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 24
+text = "RESET"
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 1116.0
+offset_top = 561.0
+offset_right = 1197.0
+offset_bottom = 592.0
+text = "End_Turn"
+
+[node name="GameName" parent="." instance=ExtResource("10_f6cir")]
+visible = false
+script = null
+
 [connection signal="zone_selected" from="RadioZone" to="." method="_on_radio_zone_zone_selected"]
+[connection signal="zone_selected" from="MicroControlerZone" to="." method="_on_micro_controler_zone_zone_selected"]
+[connection signal="zone_selected" from="AssemblyZone" to="." method="_on_assembly_zone_zone_selected"]
 [connection signal="toggled" from="DispatchButton" to="." method="_on_dispatch_button_toggled"]
