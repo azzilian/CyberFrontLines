@@ -65,6 +65,7 @@ offset_top = 550.0
 offset_right = 867.0
 offset_bottom = 646.0
 theme_override_font_sizes/font_size = 64
+disabled = true
 text = "Send Unit to Zone"
 
 [node name="EnergyText" type="Label" parent="."]
@@ -86,5 +87,15 @@ offset_bottom = 139.0
 theme_override_font_sizes/font_size = 32
 text = "10"
 
+[node name="ResetButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="zone_selected" from="RadioZone" to="." method="_on_radio_zone_zone_selected"]
+[connection signal="zone_selected" from="MicroControlerZone" to="." method="_on_micro_controler_zone_zone_selected"]
+[connection signal="zone_selected" from="AssemblyZone" to="." method="_on_assembly_zone_zone_selected"]
 [connection signal="toggled" from="DispatchButton" to="." method="_on_dispatch_button_toggled"]

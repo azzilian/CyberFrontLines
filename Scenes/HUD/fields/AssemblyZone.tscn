@@ -1,13 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4mmtww2bgnw4"]
+[gd_scene load_steps=3 format=3 uid="uid://d4mmtww2bgnw4"]
 
 [ext_resource type="Texture2D" uid="uid://vq5ekslarfas" path="res://art/assembly_zone.png" id="1_augun"]
+[ext_resource type="Script" path="res://Scenes/scripts/ZoneScript.gd" id="1_d4fuy"]
 
 [node name="AssemblyZone" type="Node2D"]
+script = ExtResource("1_d4fuy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_augun")
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_augun")
