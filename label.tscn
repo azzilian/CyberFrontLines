@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d0cgslafg7j3v"]
+
+[node name="Label" type="Label"]
+offset_left = 453.0
+offset_top = 203.0
+offset_right = 651.0
+offset_bottom = 297.0
+text = "CyberFrontLines
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ffxu2pj8gpf"]
+
+[ext_resource type="Texture2D" uid="uid://cfcqwjvlu5fm5" path="res://art/micro_controler_zone.png" id="1_qsnes"]
+
+[node name="MicroControlerZone" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qsnes")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bbeumktrl6ode"]
+
+[node name="GameName" type="Label"]
+offset_left = 461.0
+offset_top = 84.0
+offset_right = 659.0
+offset_bottom = 178.0
+text = "CyberFrontLines
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 93.0
+offset_right = 209.0
+offset_bottom = 156.0
+text = "New Game"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 180.0
+offset_right = 209.0
+offset_bottom = 243.0
+text = "Settings"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 267.0
+offset_right = 209.0
+offset_bottom = 330.0
+text = "Exit"

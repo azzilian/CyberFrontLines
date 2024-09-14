@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://djlbm620uxgga"]
+
+[ext_resource type="Script" path="res://Scenes/scripts/ZoneScript.gd" id="1_qr7gb"]
+[ext_resource type="Texture2D" uid="uid://dmnrswvonb53a" path="res://art/radio_zone.png" id="1_xvq4y"]
+[ext_resource type="Texture2D" uid="uid://cwrp8111qed1g" path="res://icon.svg" id="3_8ktdc"]
+
+[node name="RadioZone" type="Node2D"]
+script = ExtResource("1_qr7gb")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -73.0
+offset_right = 34.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_xvq4y")
+texture_focused = ExtResource("3_8ktdc")
+
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]

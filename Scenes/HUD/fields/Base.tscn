@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnwd83uirejyw"]
+
+[ext_resource type="Texture2D" uid="uid://dosvn5s851yha" path="res://art/base.png" id="1_a1v30"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5lu2h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1t315"]
+
+[node name="Base" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.5
+offset_top = -73.5
+offset_right = 57.5
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a1v30")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_5lu2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CapsuleShape2D_1t315")

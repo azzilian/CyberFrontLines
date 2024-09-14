@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://chs0frgdxkn5a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0gib5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xk40"]
+
+[node name="Unit" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_0gib5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CapsuleShape2D_0xk40")

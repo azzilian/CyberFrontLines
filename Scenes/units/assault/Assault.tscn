@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://0syytkwwooa0"]
+
+[ext_resource type="Texture2D" uid="uid://dwgmgndbvp0uv" path="res://art/assault.png" id="1_2avpr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51bvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2avpr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Assault" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_51bvd")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://cshnr0g26ylqb"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/fields/battle_zone.gd" id="1_rnrsa"]
+[ext_resource type="PackedScene" uid="uid://bnwd83uirejyw" path="res://Scenes/HUD/fields/Base.tscn" id="1_wjsv6"]
+[ext_resource type="PackedScene" uid="uid://djlbm620uxgga" path="res://Scenes/HUD/fields/RadioZone.tscn" id="2_0uuc1"]
+[ext_resource type="PackedScene" uid="uid://5ffxu2pj8gpf" path="res://Scenes/HUD/fields/MicroControlerZone.tscn" id="3_8aulw"]
+[ext_resource type="PackedScene" uid="uid://d4mmtww2bgnw4" path="res://Scenes/HUD/fields/AssemblyZone.tscn" id="4_rsw6c"]
+[ext_resource type="PackedScene" uid="uid://c04i3a2kkes86" path="res://Scenes/HUD/fields/Shop.tscn" id="5_eivab"]
+[ext_resource type="PackedScene" uid="uid://0syytkwwooa0" path="res://Scenes/units/assault/Assault.tscn" id="6_hotdp"]
+[ext_resource type="PackedScene" uid="uid://dpc8o7vesh36r" path="res://Scenes/units/defender/Defender.tscn" id="7_xw0t4"]
+[ext_resource type="PackedScene" uid="uid://dsnfuofs35aem" path="res://Scenes/units/recon/Recon.tscn" id="8_jgtoa"]
+
+[node name="BattleZone" type="Node2D"]
+position = Vector2(21, 61)
+script = ExtResource("1_rnrsa")
+
+[node name="BasePlayer" parent="." instance=ExtResource("1_wjsv6")]
+position = Vector2(1080, 316)
+
+[node name="BaseEnemy" parent="." instance=ExtResource("1_wjsv6")]
+position = Vector2(95, 12)
+
+[node name="RadioZone" parent="." instance=ExtResource("2_0uuc1")]
+position = Vector2(156, 242)
+
+[node name="MicroControlerZone" parent="." instance=ExtResource("3_8aulw")]
+position = Vector2(1074, 32)
+
+[node name="AssemblyZone" parent="." instance=ExtResource("4_rsw6c")]
+position = Vector2(585, 136)
+
+[node name="Shop" parent="." instance=ExtResource("5_eivab")]
+position = Vector2(1062, 469)
+
+[node name="Assault" parent="." instance=ExtResource("6_hotdp")]
+position = Vector2(370, 450)
+
+[node name="AssaultEnergy" type="SpinBox" parent="Assault"]
+offset_left = -32.0
+offset_top = 56.0
+offset_right = 51.0625
+offset_bottom = 87.0
+
+[node name="Defender" parent="." instance=ExtResource("7_xw0t4")]
+position = Vector2(579, 443)
+
+[node name="DefenderEnergy" type="SpinBox" parent="Defender"]
+offset_left = -36.0
+offset_top = 60.0
+offset_right = 47.0625
+offset_bottom = 91.0
+
+[node name="Recon" parent="." instance=ExtResource("8_jgtoa")]
+position = Vector2(667, 384)
+
+[node name="ReconEnergy" type="SpinBox" parent="Recon"]
+offset_left = 64.0
+offset_top = 118.0
+offset_right = 147.063
+offset_bottom = 149.0
+
+[node name="DispatchButton" type="Button" parent="."]
+offset_left = 308.0
+offset_top = 550.0
+offset_right = 867.0
+offset_bottom = 646.0
+theme_override_font_sizes/font_size = 64
+text = "Send Unit to Zone"
+
+[node name="EnergyText" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 371.0
+offset_right = 64.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 32
+text = "Avalible Energy :"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EnergyLevel" type="Label" parent="EnergyText"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 94.0
+offset_right = 174.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 32
+text = "10"
+
+[connection signal="zone_selected" from="RadioZone" to="." method="_on_radio_zone_zone_selected"]
+[connection signal="toggled" from="DispatchButton" to="." method="_on_dispatch_button_toggled"]

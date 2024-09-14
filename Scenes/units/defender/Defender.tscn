@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpc8o7vesh36r"]
+
+[ext_resource type="Texture2D" uid="uid://bt5ohk8scwedq" path="res://art/defender.png" id="1_5m1v0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfh67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5m1v0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Defender" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pfh67")
